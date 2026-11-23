@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090d">
+<title>SpartikMC | Minecraft Network</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#09090d;
+ color:#fff;
+ font-family:Tahoma,Arial,sans-serif;
+ text-align:center;
+}
+header{
+ padding:22px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ border-bottom:1px solid #292027;
+}
+.logo{font-size:25px;font-weight:bold;color:#ff303b}
+.logo span{color:white}
+.hero{
+ padding:85px 20px 55px;
+ background:radial-gradient(ellipse at top,#52151c 0%,#180d13 45%,#09090d 80%);
+}
+.hero h1{font-size:36px;margin:0 0 18px}
+.hero h1 span{color:#ff303b}
+.hero p{color:#bbb;line-height:2}
+.tag{
+ display:inline-block;
+ background:#351218;
+ color:#ff626b;
+ padding:9px 18px;
+ border-radius:30px;
+ font-size:13px;
+ margin-bottom:25px;
+}
+.ipbox{
+ max-width:440px;
+ margin:35px auto 0;
+ padding:24px;
+ background:#151218;
+ border:1px solid #54232c;
+ border-radius:16px;
+}
+.ipbox small{color:#aaa}
+.ip{
+ direction:ltr;
+ font-size:21px;
+ font-weight:bold;
+ margin:15px 0;
+}
+button,.btn{
+ display:inline-block;
+ border:0;
+ background:#e52c39;
+ color:white;
+ padding:13px 27px;
+ border-radius:9px;
+ font-size:15px;
+ font-weight:bold;
+ cursor:pointer;
+ text-decoration:none;
+}
+button:hover,.btn:hover{background:#ff4652}
+section{padding:55px 20px}
+h2{font-size:25px}
+h2 span{color:#ff303b}
+.desc{color:#aaa;line-height:2}
+.cards{
+ max-width:750px;
+ margin:30px auto;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:18px;
+}
+.card{
+ background:#151218;
+ border:1px solid #30252b;
+ border-radius:15px;
+ padding:25px 18px;
+}
+.card h3{color:#ff4652}
+.card p{color:#aaa;font-size:14px;line-height:2}
+.card a{margin-top:10px}
+footer{
+ border-top:1px solid #30252b;
+ padding:25px 15px;
+ color:#888;
+ font-size:13px;
+ line-height:2;
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">SPARTIK<span>MC</span></div>
+</header>
+
+<div class="hero">
+ <div class="tag">MINECRAFT NETWORK</div>
+ <h1>به دنیای <span>SpartikMC</span> خوش آمدید</h1>
+ <p>ماجراجویی تو از اینجا شروع میشه!</p>
+
+ <div class="ipbox">
+  <small>آدرس ورود به سرور</small>
+  <div class="ip" id="serverIP">play.spartikmc.ir</div>
+  <button onclick="copyIP()">کپی آدرس سرور</button>
+ </div>
+</div>
+
+<section>
+ <h2>چرا <span>SpartikMC؟</span></h2>
+ <p class="desc">به جمع بازیکنان SpartikMC بپیوند و ماجراجویی خودت رو شروع کن!</p>
+ <div class="cards">
+  <div class="card">
+   <h3>🎮 بازی آنلاین</h3>
+   <p>وارد دنیای سرور شو و با دوستانت بازی کن.</p>
+  </div>
+  <div class="card">
+   <h3>⚔️ ماجراجویی</h3>
+   <p>تجربه‌ای متفاوت در دنیای Minecraft.</p>
+  </div>
+ </div>
+</section>
+
+<section id="support">
+ <h2>پشتیبانی <span>SpartikMC</span></h2>
+ <p class="desc">برای ارتباط با تیم پشتیبانی از راه‌های زیر استفاده کن.</p>
+ <div class="cards">
+  <div class="card">
+   <h3>پشتیبانی تلگرام</h3>
+   <p>ارتباط با تیم ما در تلگرام</p>
+   <a class="btn" href="https://t.me/YOUR_TELEGRAM">ورود به تلگرام</a>
+  </div>
+  <div class="card">
+   <h3>پشتیبانی روبیکا</h3>
+   <p>ارتباط با تیم ما در روبیکا</p>
+   <a class="btn" href="https://rubika.ir/YOUR_RUBIKA">ورود به روبیکا</a>
+  </div>
+ </div>
+</section>
+
+<footer>
+ SPARTIKMC NETWORK<br>
+ تمام حقوق برای SpartikMC محفوظ است.
+</footer>
+
+<script>
+function copyIP(){
+ const ip=document.getElementById("serverIP").innerText;
+ if(navigator.clipboard && window.isSecureContext){
+  navigator.clipboard.writeText(ip).then(()=>{
+   alert("آدرس سرور کپی شد!");
+  }).catch(()=>fallbackCopy(ip));
+ }else{
+  fallbackCopy(ip);
+ }
+}
+function fallbackCopy(ip){
+ const input=document.createElement("textarea");
+ input.value=ip;
+ document.body.appendChild(input);
+ input.select();
+ document.execCommand("copy");
+ input.remove();
+ alert("آدرس سرور کپی شد!");
+}
+</script>
+
+</body>
+  </html>
+  
